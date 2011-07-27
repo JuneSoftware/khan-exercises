@@ -1091,6 +1091,7 @@ function prepareSite() {
 
 			if ( show ) {
 				link.text( "Try current problem" );
+				jQuery( "#hintsarea" ).empty();
 
 				for ( var i = 0; i < 9; i++ ) {
 					jQuery( "#workarea" ).append( "<hr>" );
@@ -1099,8 +1100,7 @@ function prepareSite() {
 
 			} else {
 				link.text( "Show next 10 problems" );
-
-				jQuery( "#workarea, #hintsarea" ).empty();
+				jQuery( "#workarea" ).empty();
 
 				prevProblem( 10 );
 
