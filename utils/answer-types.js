@@ -402,6 +402,7 @@ jQuery.extend( Khan.answerTypes, {
 		var solutionTextSquish = solution.text().replace(/\s+/g, "");
 		for ( var i = 0; i < possibleChoices.length && shownChoices.length < numChoices; i++ ) {
 			var choice = jQuery( possibleChoices[i] );
+			choice.runModules();
 			var choiceTextSquish = choice.text().replace(/\s+/g, "");
 
 			if ( isCategory && solutionTextSquish === choiceTextSquish ) {
@@ -449,7 +450,6 @@ jQuery.extend( Khan.answerTypes, {
 				.parent().parent()
 				.appendTo(list);
 		});
-		list.runModules();
 
 		var ret = function() {
 			var choice = list.find("input:checked");
